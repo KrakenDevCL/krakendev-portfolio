@@ -13,6 +13,7 @@ Este es un sitio web personal para mostrar mis proyectos, habilidades y experien
 - **Componentes Interactivos con IA:**
     - **Chatbot:** Un asistente virtual que responde preguntas sobre mi perfil y proyectos.
     - **Generador de Introducción:** Una herramienta de IA que crea mensajes de presentación personalizados para empleadores.
+- **Formulario de Contacto:** Integración con **Resend** para el envío de mensajes directamente al correo electrónico.
 - **Desplegado en Firebase:** Alojado en la plataforma de Firebase para un rendimiento rápido y global.
 
 ## Cómo empezar
@@ -28,7 +29,13 @@ Para ejecutar este proyecto localmente, sigue estos pasos:
     npm install
     ```
 3.  **Configura tus variables de entorno:**
-    Crea un archivo `.env` en la raíz del proyecto y añade tus claves de API si es necesario (por ejemplo, para Genkit/Google AI).
+    Crea un archivo `.env` en la raíz del proyecto y añade las siguientes claves:
+    ```env
+    GOOGLE_GENAI_API_KEY=tu_clave_de_google_ai
+    RESEND_API_KEY=tu_clave_de_resend
+    CONTACT_EMAIL_RECIPIENT=tu_correo@ejemplo.com
+    ```
+
 
 4.  **Ejecuta el servidor de desarrollo:**
     ```bash

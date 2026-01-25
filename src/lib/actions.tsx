@@ -10,6 +10,12 @@ const contactSchema = z.object({
   message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres."),
 });
 
+import * as React from 'react';
+import { Resend } from 'resend';
+import { ContactEmail } from '@/components/emails/contact-email';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export async function submitContactForm(prevState: any, formData: FormData) {
   const parsed = contactSchema.safeParse({
     name: formData.get('name'),
@@ -18,8 +24,32 @@ export async function submitContactForm(prevState: any, formData: FormData) {
   });
 
   if (parsed.success) {
-    console.log('Formulario de contacto enviado:', parsed.data);
-    return { success: true, message: '¡Mensaje enviado con éxito!' };
+    try {
+      const { name, email, message } = parsed.data;
+
+      const { data, error } = await resend.emails.send({
+        from: 'KrakenDev Portfolio <onboarding@resend.dev>',
+        to: [process.env.CONTACT_EMAIL_RECIPIENT || ''],
+        subject: `Nuevo contacto: ${name}`,
+        react: <ContactEmail name={name} email={email} message={message} />,
+      });
+
+      if (error) {
+        console.error('Error reportado por Resend:', error);
+        return { success: false, message: `Error de Resend: ${error.message}` };
+      }
+
+      console.log('Correo enviado con éxito:', data);
+      return { success: true, message: '¡Mensaje enviado con éxito!' };
+    } catch (error: any) {
+      console.error('Error inesperado detallado:', error);
+      return {
+        success: false,
+        message: 'Ocurrió un error inesperado al enviar el mensaje. Inténtalo de nuevo.'
+      };
+    }
+
+
   } else {
     const fieldErrors = parsed.error.flatten().fieldErrors;
     return {
@@ -33,6 +63,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     };
   }
 }
+
 
 // Chatbot Action
 const chatSchema = z.object({
