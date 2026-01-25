@@ -1,0 +1,52 @@
+{
+  "placeholderImages": [
+    {
+      "id": "developer-photo",
+      "description": "Un retrato profesional del desarrollador.",
+      "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQGyhzjud96ngw/profile-displayphoto-crop_800_800/B4EZee1hGDHsAM-/0/1750716519191?e=1770854400&v=beta&t=iSBhxgh4zpaBNZlBF9hxxVkrTzqg7summJR-54QRinc",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "hero-visual",
+      "description": "Un desarrollador trabajando en su escritorio con un pulpo cibernético representando el portafolio de KrakenDevCL.",
+      "imageUrl": "/hero-kraken.jpg",
+      "imageHint": "developer kraken"
+    },
+    {
+      "id": "project-vollmed-api",
+      "description": "Visual de tecnología médica, mostrando una doctora usando una tablet con datos de salud.",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3MjEwNjY2NDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical technology"
+    },
+    {
+      "id": "project-literalura",
+      "description": "Visual relacionado al proyecto Literalura, libros y código.",
+      "imageUrl": "https://images.unsplash.com/photo-1544716278-e513176f20b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxib29rcyUyMGNvZGV8ZW58MHx8fHwxNzcxNzE2NzUxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "books code"
+    },
+    {
+      "id": "project-portfolio",
+      "description": "Un diseño visual moderno del sitio web del portafolio.",
+      "imageUrl": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3ZWJzaXRlJTIwZGVzaWdufGVufDB8fHx8MTcyMDgwMjU4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "website design"
+    },
+    {
+      "id": "project-krakenhub",
+      "description": "Una ilustración oscura y estilizada de un kraken, representando la marca KrakenHub.",
+      "imageUrl": "/krakenhub-frontend.jpg",
+      "imageHint": "dark kraken"
+    },
+    {
+      "id": "project-krakenhub-api",
+      "description": "Visual abstracto de la API de KrakenHub, representando conexiones de red y datos.",
+      "imageUrl": "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcGklMjBjb25uZWN0aW9ufGVufDB8fHx8MTc3MDYwMzYyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "api connection"
+    },
+    {
+      "id": "blog-post-spring-boot",
+      "description": "Un diagrama de arquitectura de Spring Boot.",
+      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxKYXZhJTIwY29kZXxlbnwwfHx8fDE3MTk2MTU2NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "java code"
+    }
+  ]
+}
