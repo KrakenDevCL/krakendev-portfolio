@@ -64,23 +64,29 @@ export const blogPosts = [
       { type: 'paragraph', text: 'Durante los últimos meses, me he sumergido profundamente en el ecosistema de Java y Spring Boot 3, enfocándome no solo en crear endpoints, sino en diseñar arquitecturas listas para producción. Quiero compartir los 4 pilares clave que he implementado en mis proyectos recientes (como el Challenge Literalura y mi API Rest).' },
       { type: 'heading', text: '1. Seguridad Primero: Spring Security y JWT' },
       { type: 'paragraph', text: 'No basta con guardar usuarios en una base de datos. En mis últimos desarrollos, implementé Spring Security 6 para manejar la autenticación y autorización.' },
-      { type: 'list', items: [
+      {
+        type: 'list', items: [
           'Statelessness: Abandoné las sesiones tradicionales por JSON Web Tokens (JWT), permitiendo una arquitectura más escalable y desacoplada del frontend.',
           'Filtros: Configuré cadenas de filtros de seguridad para proteger rutas específicas, asegurando que solo usuarios autenticados accedan a recursos sensibles.'
-      ]},
+        ]
+      },
       { type: 'heading', text: '2. La importancia de la Integridad de Datos (Flyway)' },
       { type: 'paragraph', text: 'El esquema de la base de datos cambia; es una realidad. En lugar de ejecutar scripts SQL manuales (y peligrosos), integré Flyway para las migraciones de base de datos. Esto me permite:' },
-      { type: 'list', items: [
+      {
+        type: 'list', items: [
           'Tener un control de versiones de la estructura de la BD.',
           'Asegurar que cualquier desarrollador que clone el repositorio tenga exactamente la misma base de datos al ejecutar el proyecto.'
-      ]},
+        ]
+      },
       { type: 'heading', text: '3. Calidad de Código y Buenas Prácticas' },
       { type: 'paragraph', text: 'Con la llegada de Spring Boot 3 y Java 17+, aproveché las nuevas características del lenguaje:' },
-      { type: 'list', items: [
+      {
+        type: 'list', items: [
           'Uso de Records para DTOs (Data Transfer Objects), reduciendo el código repetitivo (boilerplate).',
           'Validaciones robustas con Bean Validation para asegurar que los datos que entran a la API sean correctos antes de procesarlos.',
           'Manejo de excepciones global con @RestControllerAdvice para devolver errores HTTP limpios y comprensibles al cliente.'
-      ]},
+        ]
+      },
       { type: 'heading', text: '4. Si no está documentado, no existe (Swagger)' },
       { type: 'paragraph', text: 'Una API potente es inútil si el equipo Front End no sabe cómo consumirla. Integré OpenAPI (Swagger) para generar documentación viva e interactiva. Esto permite probar los endpoints directamente desde el navegador sin necesidad de herramientas externas.' },
       { type: 'heading', text: 'Conclusión y Siguientes Pasos' },
@@ -144,6 +150,11 @@ export const certifications = [
     category: "Backend (Java & Spring Boot)",
     items: [
       {
+        title: 'Spring AI: Integra una aplicación con OpenAI',
+        issuer: 'Alura Latam',
+        date: 'Feb 2026',
+      },
+      {
         title: 'Spring Boot 3: aplique las mejores prácticas y proteja una API Rest',
         issuer: 'Alura Latam',
         date: 'Ene 2026',
@@ -168,7 +179,7 @@ export const certifications = [
   {
     category: "Low-Code (GeneXus)",
     items: [
-       {
+      {
         title: 'Examen Genexus 18 for Mobile',
         issuer: 'GeneXus',
         date: 'Nov 2025',
@@ -183,32 +194,32 @@ export const certifications = [
   {
     category: "Desarrollo Web y Herramientas",
     items: [
-        {
-            title: 'Formación Principiante en Programación (HTML, CSS, JS)',
-            issuer: 'Alura Latam',
-            date: '2025',
-        },
-        {
-            title: 'HTML y CSS: Flexbox, Responsividad, Header/Footer',
-            issuer: 'Alura Latam',
-            date: '2025',
-        },
-        {
-            title: 'Lógica de programación con JavaScript',
-            issuer: 'Alura Latam',
-            date: '2025',
-        },
-        {
-            title: 'Git y GitHub: repositorio, commit y versiones',
-            issuer: 'Alura Latam',
-            date: 'Jul 2025',
-        },
+      {
+        title: 'Formación Principiante en Programación (HTML, CSS, JS)',
+        issuer: 'Alura Latam',
+        date: '2025',
+      },
+      {
+        title: 'HTML y CSS: Flexbox, Responsividad, Header/Footer',
+        issuer: 'Alura Latam',
+        date: '2025',
+      },
+      {
+        title: 'Lógica de programación con JavaScript',
+        issuer: 'Alura Latam',
+        date: '2025',
+      },
+      {
+        title: 'Git y GitHub: repositorio, commit y versiones',
+        issuer: 'Alura Latam',
+        date: 'Jul 2025',
+      },
     ]
   },
   {
     category: "Otras Habilidades y Metodologías",
     items: [
-       {
+      {
         title: 'EF SET English Certificate 75/100 (C2 Proficient)',
         issuer: 'EF Standard English Test (EF SET)',
         date: 'Nov 2022',
@@ -246,4 +257,4 @@ export const education = [
   }
 ];
 
-export const cvUrl = "https://media.licdn.com/dms/document/media/v2/D4E2DAQFswPwgSlnTKg/profile-treasury-document-pdf-analyzed/B4EZtM.4PfGoAk-/0/1766523112224?e=1770249600&v=beta&t=Uo6RyY4r7tr4TvwMCMLIY9VgcqFprJDu-7jQN4yQB5Q";
+export const cvUrl = "/cv-jagc.pdf";
