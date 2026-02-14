@@ -1,45 +1,81 @@
-# KrakenDevCL - Portafolio de Desarrollador de Software
+<div align="center">
+  <img src="./public/hero-kraken.jpg" alt="KrakenDevCL Banner" width="800">
+  
+  # 🌊 KrakenDevCL Portfolio
+  
+  ### Desarrollador de Software (Backend & Low-Code)
+  
+  [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)](https://krakendev-portfolio.vercel.app/)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/josegallegoscarvallo/)
+  [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:krakendev.cl@gmail.com)
 
-¡Bienvenido a mi portafolio personal! Este proyecto fue construido con Next.js, React, Tailwind CSS, Shadcn UI y Genkit, y está desplegado en Firebase.
+  *Backend Developer apasionado por la escalabilidad y la versatilidad técnica.*
+</div>
 
-## Descripción
+---
 
-Este es un sitio web personal para mostrar mis proyectos, habilidades y experiencia como desarrollador de software especializado en Backend con Java (Spring Boot) y Low-Code con GeneXus.
+## 🚀 Sobre el Proyecto
 
-## Características
+Este portafolio no es solo una vitrina de proyectos; es una aplicación moderna construida con **Next.js 15**, **React 19** y **Tailwind CSS**. Está diseñado para ofrecer una experiencia de usuario fluida y demostrar mis capacidades técnicas tanto en el frontend como en la arquitectura de sistemas.
 
-- **Diseño Moderno y Responsivo:** Construido con Tailwind CSS y componentes de Shadcn UI.
-- **Secciones Detalladas:** Incluye información sobre mí, mi formación, proyectos, certificaciones y un blog.
-- **Componentes Interactivos con IA:**
-    - **Chatbot:** Un asistente virtual que responde preguntas sobre mi perfil y proyectos.
-    - **Generador de Introducción:** Una herramienta de IA que crea mensajes de presentación personalizados para empleadores.
-- **Formulario de Contacto:** Integración con **Resend** para el envío de mensajes directamente al correo electrónico.
-- **Desplegado en Firebase:** Alojado en la plataforma de Firebase para un rendimiento rápido y global.
+### 🛠️ Tech Stack Principal
 
-## Cómo empezar
+<div align="center">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" />
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" />
+  <img src="https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
+</div >
 
-Para ejecutar este proyecto localmente, sigue estos pasos:
+---
 
-1.  **Clona el repositorio:**
-    ```bash
-    git clone https://github.com/KrakenDevCL/krakendev-portfolio
-    ```
-2.  **Instala las dependencias:**
-    ```bash
-    npm install
-    ```
-3.  **Configura tus variables de entorno:**
-    Crea un archivo `.env` en la raíz del proyecto y añade las siguientes claves:
-    ```env
-    GOOGLE_GENAI_API_KEY=tu_clave_de_google_ai
-    RESEND_API_KEY=tu_clave_de_resend
-    CONTACT_EMAIL_RECIPIENT=tu_correo@ejemplo.com
-    ```
+## ✨ Características Destacadas
 
+### 🤖 Integraciones con IA
+- **Chatbot Asistente**: Un asistente virtual basado en **Google Gemini** que responde preguntas en tiempo real sobre mi experiencia y proyectos.
+- **Generador de Introducciones**: Herramienta que utiliza IA para redactar mensajes de presentación personalizados basados en el perfil del empleador.
 
-4.  **Ejecuta el servidor de desarrollo:**
-    ```bash
-    npm run dev
-    ```
+### 🔍 Optimización SEO (Vercel Ready)
+- **Rastreo Óptimo**: `robots.txt` y `sitemap.xml` dinámico para una indexación perfecta en Google Search.
+- **Social Metadata**: Configuración completa de **Open Graph** y **Twitter Cards**.
+- **Rich Snippets**: Implementación de **JSON-LD (Schema.org)** para resultados enriquecidos de Persona y Sitio Web.
 
-¡Gracias por visitar!
+---
+
+## 📁 Proyectos Principales
+
+- **KrakenHub API**: Red social para desarrolladores (Spring Boot / Security / JPA).
+- **Voll.med API**: Gestión clínica completa con seguridad JWT y Flyway.
+- **Challenge Literalura**: Catálogo de libros integrando APIs externas y persistencia en DB.
+
+---
+
+## ⚙️ Instalación Local
+
+Si deseas probar el proyecto en tu máquina:
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/KrakenDevCL/krakendev-portfolio
+   ```
+
+2. **Instala las dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Variables de Entorno**:
+   Configura tu archivo `.env` con las API keys de Google GenAI y Resend.
+
+4. **Inicia el servidor**:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+<div align="center">
+  Desarrollado por <b>KrakenDevCL</b>
+</div>
