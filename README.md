@@ -46,9 +46,12 @@ Este portafolio no es solo una vitrina de proyectos; es una aplicación moderna 
 
 ## 📁 Proyectos Principales
 
-- **KrakenHub API**: Red social para desarrolladores (Spring Boot / Security / JPA).
-- **Voll.med API**: Gestión clínica completa con seguridad JWT y Flyway.
-- **Challenge Literalura**: Catálogo de libros integrando APIs externas y persistencia en DB.
+- **[Tentáculo App](https://tentaculo-app-portfolio.vercel.app/)**: Clon frontend de aplicación financiera interactiva con datos simulados (React / Vite / Spring Boot / Java).
+- **[KrakenHub API](https://github.com/KrakenDevCL/KrakenHub-API)**: Red social para desarrolladores (Spring Boot / Security / JPA).
+- **[KrakenHub Frontend](https://github.com/KrakenDevCL/KrakenHub-Frontend)**: Frontend para red social de desarrolladores (Next.js / React / Tailwind CSS).
+- **[Voll.med API](https://github.com/KrakenDevCL/vollmed-api)**: Gestión clínica completa con seguridad JWT y Flyway.
+- **[Literalura](https://github.com/KrakenDevCL/literalura)**: Catálogo de libros integrando APIs externas (Spring Boot / PostgreSQL).
+- **[Portafolio KrakenDevCL](https://github.com/KrakenDevCL/krakendev-portfolio)**: Este sitio web personal interactivo (Next.js / Tailwind CSS / Genkit).
 
 ---
 

@@ -10,6 +10,14 @@ export const skills = [
 
 export const projects = [
   {
+    title: 'Tentáculo App',
+    description: 'Clon frontend de aplicación financiera interactiva con datos simulados, integrando la backend tentaculo-api realizada en Spring Boot.',
+    techStack: ['React', 'Vite', 'Spring Boot', 'Java'],
+    githubLink: 'https://github.com/KrakenDevCL/tentaculo-api',
+    liveLink: 'https://tentaculo-app-portfolio.vercel.app/',
+    image: 'project-tentaculo'
+  },
+  {
     title: 'KrakenHub API',
     description: 'API REST para KrakenHub, una red social para desarrolladores de software, que gestiona perfiles de usuario, proyectos y conexiones.',
     techStack: ['Java', 'Spring Boot', 'Spring Security', 'JPA', 'Flyway', 'PostgreSQL'],

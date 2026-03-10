@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "project-tentaculo",
+      "description": "Panel de control financiero moderno con tema oscuro, mostrando tarjetas de resumen y gastos.",
+      "imageUrl": "/project-tentaculo.png",
+      "imageHint": "financial dashboard"
+    },
+    {
       "id": "developer-photo",
       "description": "Un retrato profesional del desarrollador.",
       "imageUrl": "/developer-photo.jpg",
