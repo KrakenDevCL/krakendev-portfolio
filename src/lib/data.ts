@@ -1,3 +1,5 @@
+// src/lib/data.ts
+
 export const skills = [
   'Java Spring Boot 3',
   'Oracle Cloud Infrastructure (OCI)',
@@ -11,8 +13,6 @@ export const skills = [
 ];
 
 export const projects = [
-  // Mantenemos los proyectos existentes, pero podrías añadir 
-  // etiquetas de "Cloud Ready" o "AI Integrated" en el futuro.
   {
     title: 'Tentáculo App',
     description: 'Clon frontend de aplicación financiera interactiva con datos simulados, integrando la backend tentaculo-api realizada en Spring Boot.',
@@ -29,7 +29,61 @@ export const projects = [
     liveLink: '#',
     image: 'project-krakenhub-api'
   },
-  // ... resto de tus proyectos
+  {
+    title: 'KrakenHub Frontend',
+    description: 'Frontend para KrakenHub, una red social para desarrolladores de software, con funcionalidades para compartir proyectos, seguir a otros desarrolladores y gestionar perfiles.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Firebase'],
+    githubLink: 'https://github.com/KrakenDevCL/KrakenHub-Frontend',
+    liveLink: '#',
+    image: 'project-krakenhub'
+  },
+  {
+    title: 'API Voll.med',
+    description: 'API REST para una clínica ficticia, que gestiona médicos, pacientes y citas. Incluye seguridad con JWT, paginación y validaciones.',
+    techStack: ['Java', 'Spring Boot', 'Spring Security', 'JPA', 'Flyway'],
+    githubLink: 'https://github.com/KrakenDevCL/vollmed-api',
+    liveLink: '#',
+    image: 'project-vollmed-api'
+  },
+  {
+    title: 'Literalura: Catálogo de Libros',
+    description: 'Aplicación de consola para interactuar con la API Gutendex, buscar libros, autores y registrar consultas en la base de datos.',
+    techStack: ['Java', 'Spring Boot', 'PostgreSQL', 'API REST'],
+    githubLink: 'https://github.com/KrakenDevCL/literalura',
+    liveLink: '#',
+    image: 'project-literalura'
+  },
+  {
+    title: 'Portafolio KrakenDevCL',
+    description: 'Este es el portafolio que estás viendo. Un sitio web personal para mostrar mis proyectos, construido con Next.js y estilizado con Tailwind CSS.',
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Shadcn UI', 'Genkit'],
+    githubLink: 'https://github.com/KrakenDevCL/krakendev-portfolio',
+    liveLink: '#',
+    image: 'project-portfolio'
+  }
+];
+
+export const blogPosts = [
+  {
+    title: "Más allá del \"Hola Mundo\": Construyendo APIs Seguras y Escalables con Spring Boot 3",
+    slug: "mas-alla-del-hola-mundo-spring-boot-3",
+    summary: "En el desarrollo Backend, la seguridad, mantenibilidad y documentación son clave. Descubre los 4 pilares para construir APIs robustas con Spring Boot 3, desde seguridad con JWT hasta documentación con Swagger.",
+    date: "25 de enero de 2026",
+    image: 'blog-post-spring-boot',
+    link: "https://github.com/KrakenDevCL",
+    content: [
+      { type: 'paragraph', text: 'En el desarrollo Backend moderno, hacer que una aplicación "funcione" es solo el primer paso. El verdadero desafío —y lo que diferencia al software profesional— radica en la seguridad, la mantenibilidad y la documentación.' },
+      { type: 'paragraph', text: 'Durante los últimos meses, me he sumergido profundamente en el ecosistema de Java y Spring Boot 3, enfocándome no solo en crear endpoints, sino en diseñar arquitecturas listas para producción.' },
+      { type: 'heading', text: '1. Seguridad Primero: Spring Security y JWT' },
+      { type: 'paragraph', text: 'Implementé Spring Security 6 para manejar la autenticación y autorización mediante JSON Web Tokens (JWT), permitiendo una arquitectura más escalable.' },
+      { type: 'heading', text: '2. Integridad de Datos con Flyway' },
+      { type: 'paragraph', text: 'Integré Flyway para las migraciones de base de datos, asegurando un control de versiones robusto de la estructura de la BD.' },
+      { type: 'heading', text: '3. Calidad de Código' },
+      { type: 'paragraph', text: 'Aproveché Java 17+ usando Records para DTOs y validaciones robustas con Bean Validation.' },
+      { type: 'heading', text: '4. Documentación con Swagger/OpenAPI' },
+      { type: 'paragraph', text: 'Generé documentación interactiva que permite probar los endpoints directamente desde el navegador.' },
+    ]
+  }
 ];
 
 export const developerProfile = {
@@ -53,7 +107,7 @@ export const developerProfile = {
     },
     {
       title: "Integración de Sistemas",
-      description: "Diseño y despliegue de APIs REST/SOAP para la interoperabilidad de sistemas críticos gubernamentales y financieros."
+      description: "Diseño e despliegue de APIs REST/SOAP para la interoperabilidad de sistemas críticos gubernamentales y financieros."
     },
     {
       title: "Calidad y Seguridad",
