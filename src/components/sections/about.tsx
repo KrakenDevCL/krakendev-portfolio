@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
-import { skills, developerProfile } from '@/lib/data';
+import { skillGroups, developerProfile } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -61,12 +61,8 @@ export function About() {
             <p className="italic text-muted-foreground">{developerProfile.motivation}</p>
 
             <div className="space-y-3">
-              <h3 className="font-headline text-2xl font-semibold">🛠 Tech Stack</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map(skill => (
-                  <Badge key={skill} variant="secondary" className="px-3 py-1 text-sm">{skill}</Badge>
-                ))}
-              </div>
+              <h3 className="font-headline text-2xl font-semibold">Stack tecnológico</h3>
+              {skillGroups.map(group => <div key={group.title} className="space-y-2 pt-2"><h4 className="text-sm font-semibold text-muted-foreground">{group.title}</h4><div className="flex flex-wrap gap-2">{group.skills.map(skill => <Badge key={skill} variant="secondary" className="px-3 py-1 text-sm">{skill}</Badge>)}</div></div>)}
             </div>
 
           </div>

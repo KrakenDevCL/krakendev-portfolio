@@ -35,4 +35,7 @@ declare module 'lucide-react' {
     export const Send: Icon;
     export const User: Icon;
     export const CheckCircle2: Icon;
+    export const ArrowUpRight: Icon;
+    export const FileCheck2: Icon;
+    export const Workflow: Icon;
 }

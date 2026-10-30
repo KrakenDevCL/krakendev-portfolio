@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "demo:build": "node tools/build-engineering-demo.mjs",
+    "demo:test": "node --test tools/engineering-demo.test.mjs",
+    "agent-demo:test": "node --test tools/agent-demo.test.mjs",
+    "agent-demo:build": "node tools/build-agent-demo.mjs",
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",

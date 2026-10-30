@@ -9,7 +9,7 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
-import { developerProfile, projects, skills, certifications, education } from '@/lib/data';
+import { developerProfile, projects, skills, certifications, education, experience } from '@/lib/data';
 
 const PortfolioChatInputSchema = z.object({
   query: z.string().describe('La pregunta del usuario sobre el portafolio.'),
@@ -18,6 +18,7 @@ const PortfolioChatInputSchema = z.object({
   skills: z.any().describe('Una lista de las habilidades del desarrollador.'),
   certifications: z.any().describe('Una lista de las certificaciones del desarrollador, agrupadas por categoría.'),
   education: z.any().describe('Una lista de la formación académica del desarrollador.'),
+  experience: z.any().describe('Experiencia profesional pública.'),
 });
 export type PortfolioChatInput = z.infer<typeof PortfolioChatInputSchema>;
 
@@ -34,6 +35,7 @@ export async function chatAboutPortfolio(query: string): Promise<PortfolioChatOu
     skills,
     certifications,
     education,
+    experience,
   });
 }
 
@@ -54,6 +56,12 @@ const prompt = ai.definePrompt({
   ### Formación Académica
   {{#each education}}
   - **{{this.institution}}** ({{this.date}}): {{this.title}}. {{this.description}} Aptitudes: {{#each this.skills}}{{{this}}}{{/each}}.
+  {{/each}}
+
+  ### Experiencia profesional
+  {{#each experience}}
+  - {{this.title}}, {{this.company}} ({{this.period}}): {{this.description}}
+  {{#each this.achievements}} - {{this}} {{/each}}
   {{/each}}
 
   ### Proyectos

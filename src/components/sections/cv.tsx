@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
-import { cvUrl } from '@/lib/data';
+import Link from 'next/link';
 
 export function CV() {
   return (
@@ -10,14 +10,14 @@ export function CV() {
           Mi <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Currículum</span>
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Si estás interesado en conocer más sobre mi trayectoria, puedes descargar mi CV completo aquí.
+          Revisa mi experiencia, proyectos y formación en una versión actualizada que puedes guardar como PDF.
         </p>
         <div className="mt-8">
           <Button asChild size="lg">
-            <a href={cvUrl} target="_blank" rel="noopener noreferrer" download="CV-Jose-Gallegos.pdf">
+            <Link href="/cv">
               <Download className="mr-2 h-5 w-5" />
-              Descargar CV
-            </a>
+              Ver currículum
+            </Link>
           </Button>
         </div>
       </div>

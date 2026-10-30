@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Demo local de búsqueda con fuentes ficticias</title><style>body{font:16px/1.6 system-ui,sans-serif;max-width:760px;margin:50px auto;padding:0 22px;color:#172b3d;background:#f2f6f8}main{background:#fff;border:1px solid #d6e3e9;border-radius:16px;padding:28px}h1{font-size:2rem;line-height:1.2}label{display:block;font-weight:600}input{box-sizing:border-box;width:100%;padding:12px;margin:10px 0;border:1px solid #93aab6;border-radius:8px;font:inherit}button{background:#116b72;color:white;border:0;border-radius:8px;padding:12px 18px;font:inherit;cursor:pointer}.card{background:#eef6f7;padding:16px;border-radius:8px;margin-top:20px}small{color:#425b69}</style></head><body><main><p>KRAKENDEV · DEMOSTRACIÓN</p><h1>Búsqueda local con fuentes ficticias</h1><p>Escribe una pregunta y consulta dos textos de demostración en tu navegador. Prueba «¿Qué fecha requiere una reserva?» o «¿Qué novedades tiene Atlas?».</p><form id="form"><label for="question">Tu pregunta</label><input id="question" maxlength="200" value="¿Qué fecha requiere una reserva?" required><button>Ejecutar demo</button></form><section class="card" aria-live="polite" hidden id="result"><strong>Respuesta</strong><p id="answer"></p><small id="source"></small><p id="trace"></p></section><p><small>Búsqueda por palabras sobre textos ficticios. No ejecuta un LLM, LangGraph, FAISS ni búsqueda web. No necesita conexión ni envía información.</small></p></main><script>
+// Public demonstration data, created specifically for this portfolio.
+const demoSources = [
+  { id: 'guide', title: 'Guía de reservas (ficticia)', kind: 'document', text: 'Para confirmar una reserva se necesita una fecha válida y disponibilidad.', keywords: ['reserva', 'reservas', 'fecha', 'confirmar', 'disponibilidad', 'reservation', 'booking', 'date', 'availability'] },
+  { id: 'atlas', title: 'Nota de lanzamiento Atlas (ficticia)', kind: 'web', text: 'La versión 2.0 de Atlas incorpora una búsqueda mejorada.', keywords: ['atlas', 'version', 'novedades', 'actualizacion', 'update', 'updates', 'news'] },
+];
+
+/**
+ * A deterministic local retrieval demonstration, not an LLM or real web search.
+ * @param {string} question
+ * @returns {{ route: string, answer: string, source: typeof demoSources[number] | null, count: number }}
+ */
+function runAgentDemo(question) {
+  const normalized = question.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const words = normalized.match(/[a-z0-9]+/g) || [];
+  const ranked = demoSources.map(source => ({ source, score: source.keywords.filter(word => words.includes(word)).length })).filter(x => x.score > 0).sort((a, b) => b.score - a.score);
+  if (!ranked.length) return { route: 'Sin fuente', answer: 'No encontré información suficiente en las fuentes de demostración.', source: null, count: 0 };
+  const best = ranked[0];
+  return { route: best.source.kind === 'web' ? 'Resultado web ficticio' : 'Documento ficticio', answer: best.source.text, source: best.source, count: ranked.length };
+}
+
+document.getElementById('form').addEventListener('submit',function(event){event.preventDefault();const start=performance.now();const result=runAgentDemo(document.getElementById('question').value);const elapsed=Math.round((performance.now()-start)*100)/100;document.getElementById('answer').textContent=result.answer;document.getElementById('source').textContent=result.source?'Fuente: '+result.source.title:'Sin fuente encontrada';document.getElementById('trace').textContent='Ruta: '+result.route+' · Coincidencias: '+result.count+' · Tiempo local: '+elapsed+' ms';document.getElementById('result').hidden=false;});
+</script></body></html>

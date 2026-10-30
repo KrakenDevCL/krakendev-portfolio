@@ -1,0 +1,7 @@
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+
+export function PortfolioBlog({ language = 'es' }: { language?: 'es' | 'en' }) {
+  const en = language === 'en';
+  return <section id="blog" className="container section-space scroll-mt-20"><div className="section-heading"><div><p className="section-kicker">09 / {en ? 'WRITING' : 'ARTÍCULOS'}</p><h2 className="section-title">{en ? 'Notes from' : 'Ideas desde'}<br /><span className="text-primary">{en ? 'the work.' : 'la práctica.'}</span></h2></div><p className="section-intro">{en ? 'Thoughts on building reliable software.' : 'Reflexiones sobre cómo construir software confiable.'}</p></div><article className="project-row flex-wrap gap-5 p-6 sm:p-8"><div className="max-w-3xl"><p className="section-kicker">BACKEND / SPRING BOOT</p><h3 className="mt-3 font-headline text-2xl font-bold">{en ? 'Beyond “Hello World”: Building secure and scalable APIs with Spring Boot 3' : 'Más allá del “Hola Mundo”: Construyendo APIs seguras y escalables con Spring Boot 3'}</h3><p className="mt-3 leading-relaxed text-muted-foreground">{en ? 'Security, data integrity, code quality and API documentation are essential foundations for backend applications.' : 'Seguridad, integridad de datos, calidad de código y documentación como pilares del desarrollo backend.'}</p></div><Link href={en ? '/en/blog/spring-boot-3' : '/blog/mas-alla-del-hola-mundo-spring-boot-3'} className="project-link font-semibold">{en ? 'Read article' : 'Leer artículo'} <ArrowUpRight className="h-4 w-4" /></Link></article></section>;
+}

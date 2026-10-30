@@ -2,7 +2,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, ArrowUpRight, Workflow } from 'lucide-react';
 import { projects } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
@@ -21,6 +21,16 @@ export function Projects() {
           const image = PlaceHolderImages.find(p => p.id === project.image);
           return (
             <Card key={project.title} className="flex transform flex-col overflow-hidden transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+              {project.caseStudyLink && !image && (
+                <div className="flex h-48 flex-col justify-between border-b bg-gradient-to-br from-primary/20 via-background to-accent/20 p-6">
+                  <div className="flex items-center justify-between text-primary">
+                    <Workflow className="h-9 w-9" aria-hidden="true" />
+                    <Badge variant="outline">Caso de estudio · Autoría propia</Badge>
+                  </div>
+                  <p className="font-headline text-2xl font-bold">Requisitos → Diseño → Word</p>
+                  <p className="text-sm text-muted-foreground">Evidencia, automatización y criterio humano.</p>
+                </div>
+              )}
               {image && (
                 <Image
                   src={image.imageUrl}
@@ -43,12 +53,22 @@ export function Projects() {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-end gap-2 bg-muted/50 p-4">
+                {!project.caseStudyLink && !project.githubLink && !project.liveLink && <span className="text-sm text-muted-foreground">Proyecto de aprendizaje</span>}
+                {project.caseStudyLink && (
+                  <Button variant="ghost" size="sm" asChild>
+                    <Link href={project.caseStudyLink}>
+                      Ver caso de estudio <ArrowUpRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                )}
+                {project.githubLink && (
                 <Button variant="ghost" size="sm" asChild>
                   <a href={project.githubLink} target="_blank" rel="noopener noreferrer" aria-label={`GitHub for ${project.title}`}>
                     <Github className="mr-2 h-4 w-4" />
                     GitHub
                   </a>
                 </Button>
+                )}
                 {project.liveLink && project.liveLink !== '#' && (
                   <Button variant="ghost" size="sm" asChild>
                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer" aria-label={`Live demo for ${project.title}`}>

@@ -20,5 +20,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         ...blogUrls,
+        ...['/en', '/en/cv', '/en/projects/ai-engineering', '/en/projects/hybrid-agent', '/en/projects/krakenhub-api', '/en/blog/spring-boot-3', '/proyectos/krakenhub-api'].map(path => ({ url: `${baseUrl}${path}`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 })),
+        { url: `${baseUrl}/cv`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+        {
+            url: `${baseUrl}/proyectos/agente-hibrido`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/proyectos/ingenieria-asistida-ia`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
     ]
 }

@@ -11,7 +11,7 @@ export function JsonLd() {
         description: developerProfile.bio,
         sameAs: [
             'https://github.com/KrakenDevCL',
-            // Add other social links if available in data.ts
+            'https://www.linkedin.com/in/krakendevcl/',
         ],
     }
 

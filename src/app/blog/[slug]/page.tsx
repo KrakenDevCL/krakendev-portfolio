@@ -83,13 +83,14 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="container py-24 sm:py-32">
-      <div className="mb-8">
+      <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
         <Button asChild variant="ghost">
           <Link href="/#blog">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Volver al Blog
           </Link>
         </Button>
+        {slug === 'mas-alla-del-hola-mundo-spring-boot-3' && <Link href="/en/blog/spring-boot-3" hrefLang="en" className="rounded-md border px-3 py-2 text-sm">English</Link>}
       </div>
       <article className="mx-auto max-w-4xl">
         <Card className="overflow-hidden">

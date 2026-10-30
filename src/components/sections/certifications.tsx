@@ -13,9 +13,9 @@ export function Certifications() {
         <div className="container">
             <div className="mb-12 text-center">
                 <h2 className="font-headline text-3xl font-bold md:text-4xl">
-                    Licencias y <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Certificaciones</span>
+                    Certificaciones y <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Formación</span>
                 </h2>
-                <p className="mt-2 text-lg text-muted-foreground">Mi compromiso con el aprendizaje y desarrollo continuo.</p>
+                <p className="mt-2 text-lg text-muted-foreground">Certificaciones oficiales y cursos para seguir construyendo con IA y software.</p>
             </div>
             <div className="mx-auto max-w-3xl">
               <Accordion type="multiple" className="w-full" defaultValue={['item-0']}>

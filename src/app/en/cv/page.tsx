@@ -1,0 +1,19 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { PrintCV } from '@/components/print-cv';
+import { englishProfile, englishExperience, englishSkills, englishProjects } from '@/lib/english-data';
+
+export const metadata: Metadata = { title: 'Resume | AI & Backend Engineer', description: 'Experience, projects and education of José Antonio Gallegos Carvallo.', alternates: { canonical: '/en/cv', languages: { en: '/en/cv', es: '/cv' } } };
+export default function EnglishResume() {
+  return <main lang="en" className="cv-page mx-auto max-w-4xl break-words px-6 py-12 sm:px-10"><div className="cv-actions mb-10 flex flex-wrap items-center justify-between gap-4"><Link href="/en#cv">← Back to portfolio</Link><div className="flex gap-3"><Link href="/cv" hrefLang="es" className="rounded-md border px-3 py-2 text-sm">ES</Link><PrintCV language="en" /></div></div>
+    <header className="pb-4"><h1 className="text-3xl font-bold">José Antonio Gallegos Carvallo</h1><p className="mt-2 font-semibold">AI Engineer | Backend Engineer</p><p className="mt-3 text-sm leading-relaxed">Email: <a href="mailto:krakendev.cl@gmail.com">krakendev.cl@gmail.com</a><br />LinkedIn: <a href="https://www.linkedin.com/in/krakendevcl/">https://www.linkedin.com/in/krakendevcl/</a><br />GitHub: <a href="https://github.com/KrakenDevCL">https://github.com/KrakenDevCL</a><br />Portfolio: <a href="https://krakendev-portfolio.vercel.app/en">https://krakendev-portfolio.vercel.app/en</a></p></header>
+    <section className="mt-5"><h2 className="text-lg font-bold">Professional summary</h2><p className="mt-2 text-sm leading-relaxed">{englishProfile}</p></section>
+    <section className="mt-5"><h2 className="text-lg font-bold">Work experience</h2><div className="mt-3 space-y-4">{englishExperience.map(item => <article key={item.company} className="cv-block"><h3 className="text-sm font-bold">{item.title}</h3><p className="text-sm">{item.company} | {item.period} | Remote</p><p className="mt-1 text-sm leading-relaxed">{item.description}</p>{item.achievements.length > 0 && <ul className="mt-1 list-disc space-y-1 pl-5 text-sm leading-relaxed">{item.achievements.map(x => <li key={x}>{x}</li>)}</ul>}</article>)}</div></section>
+    <section className="mt-5"><h2 className="text-lg font-bold">Projects</h2><div className="mt-3 space-y-3">{englishProjects.slice(0,2).map(item => <article className="cv-block" key={item.title}><h3 className="text-sm font-bold">{item.title}</h3><p className="mt-1 text-sm leading-relaxed">{item.description}</p><p className="mt-1 text-sm">Technologies: {item.techStack.join(', ')}</p></article>)}</div></section>
+    <section className="mt-5"><h2 className="text-lg font-bold">Technical skills</h2><div className="mt-2 space-y-1">{englishSkills.map(group => <p key={group.title} className="text-sm leading-relaxed"><strong>{group.title}:</strong> {group.items.join(', ')}</p>)}</div></section>
+    <section className="mt-5"><h2 className="text-lg font-bold">Education</h2><ul className="mt-2 space-y-1 text-sm leading-relaxed"><li>Bachelor’s degree in Computer Engineering | Duoc UC | Graduated 2022</li><li>Java Programming Diploma | Politécnico de Colombia | 2023</li><li>ONE Program, Tech Foundation, Advanced and Builder | Alura Latam and Oracle | 2025–2026</li></ul></section>
+    <section className="mt-5"><h2 className="text-lg font-bold">Certifications</h2><ul className="mt-2 space-y-1 text-sm"><li>Oracle Cloud Infrastructure AI Foundations Associate | Oracle | 2026</li><li>Oracle Cloud Infrastructure Foundations Associate | Oracle | 2026</li><li>WorkWithPlus Core Analyst | WorkWithPlus</li></ul></section>
+    <section className="mt-5"><h2 className="text-lg font-bold">Languages</h2><p className="mt-2 text-sm">English: C2 Proficient | EF SET</p></section>
+    <p className="cv-actions mt-10 border-t pt-5 text-sm text-muted-foreground">Use “Print or save as PDF” to download this resume.</p>
+  </main>;
+}

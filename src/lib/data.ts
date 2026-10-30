@@ -1,18 +1,39 @@
 // src/lib/data.ts
 
-export const skills = [
-  'Java Spring Boot 3',
-  'Oracle Cloud Infrastructure (OCI)',
-  'GeneXus (v16, v17, v18)',
-  'IA Generativa (RAG & LLMs)',
-  'Spring AI',
-  'SQL & Oracle Database',
-  'Python (Machine Learning)',
-  'APIs REST/SOAP',
-  'Docker & DevOps'
+export const skillGroups = [
+  { title: 'IA aplicada y agentes', skills: ['LLMs', 'RAG', 'Agentes de IA', 'Python', 'LangGraph', 'FAISS', 'n8n', 'Spring AI', 'MCP'] },
+  { title: 'Backend e integración', skills: ['Java', 'Spring Boot 3', 'APIs REST/SOAP', 'SQL', 'PostgreSQL', 'Oracle Database'] },
+  { title: 'Cloud y herramientas', skills: ['Oracle Cloud Infrastructure (OCI)', 'Docker', 'DevOps'] },
+  { title: 'Desarrollo empresarial', skills: ['GeneXus (v16, v17, v18)', 'WorkWithPlus'] },
 ];
+export const skills = skillGroups.flatMap(group => group.skills);
 
-export const projects = [
+type Project = {
+  title: string;
+  description: string;
+  techStack: string[];
+  githubLink?: string;
+  liveLink?: string;
+  caseStudyLink?: string;
+  image: string;
+};
+
+export const projects: Project[] = [
+  {
+    title: 'Ingeniería de software asistida por IA',
+    description: 'Proyecto de mi autoría que conecta requisitos, evidencia de código y propuestas de diseño técnico con validaciones automáticas y revisión humana.',
+    techStack: ['Node.js', 'MCP', 'GeneXus', 'JavaScript', 'Open XML'],
+    caseStudyLink: '/proyectos/ingenieria-asistida-ia',
+    image: 'project-engineering-ai'
+  },
+  {
+    title: 'Agente híbrido de IA',
+    description: 'Proyecto de aprendizaje que combina un agente con recuperación de documentos locales y búsqueda web, orquestado mediante n8n.',
+    techStack: ['Python', 'LangGraph', 'RAG', 'FAISS', 'n8n'],
+    caseStudyLink: '/proyectos/agente-hibrido',
+    githubLink: 'https://github.com/KrakenDevCL/taller-inmersion-agentes-ia-llm-rag',
+    image: 'project-ai-agent'
+  },
   {
     title: 'Tentáculo App',
     description: 'Clon frontend de aplicación financiera interactiva con datos simulados, integrando la backend tentaculo-api realizada en Spring Boot.',
@@ -23,8 +44,9 @@ export const projects = [
   },
   {
     title: 'KrakenHub API',
-    description: 'API REST para KrakenHub, una red social para desarrolladores de software, que gestiona perfiles de usuario, proyectos y conexiones.',
-    techStack: ['Java', 'Spring Boot', 'Spring Security', 'JPA', 'Flyway', 'PostgreSQL'],
+    description: 'API REST para un foro, con gestión de tópicos y respuestas, autenticación JWT y documentación OpenAPI.',
+    techStack: ['Java', 'Spring Boot', 'Spring Security', 'JWT', 'Flyway', 'MySQL'],
+    caseStudyLink: '/proyectos/krakenhub-api',
     githubLink: 'https://github.com/KrakenDevCL/KrakenHub-API',
     liveLink: '#',
     image: 'project-krakenhub-api'
@@ -86,53 +108,93 @@ export const blogPosts = [
   }
 ];
 
+export const experience = [
+  {
+    title: 'Ingeniero de Software',
+    company: 'BROWSE Chile',
+    period: 'Enero 2021 – actualidad',
+    description: 'Desarrollo, mantenimiento y modernización de módulos de un ERP empresarial, combinando GeneXus con integraciones en Java y SQL.',
+    achievements: [
+      'Diseñé y desarrollé una integración REST para automatizar el envío de nóminas bancarias desde el ERP.',
+      'Optimicé lógica y consultas SQL, reduciendo un 30 % el tiempo de procesamiento y aumentando un 70 % la velocidad de generación de informes internos.',
+      'Lideré la modernización de módulos de sistemas existentes, cuidando su estabilidad y escalabilidad.',
+      'Apliqué prácticas de calidad con un índice de rechazo en QA cercano al 0 % y cumplimiento de los acuerdos de entrega.',
+    ],
+    skills: ['GeneXus', 'Java', 'SQL', 'APIs REST'],
+  },
+  {
+    title: 'Estudiante en prácticas · Desarrollo backend',
+    company: 'Fisfor',
+    period: 'Agosto 2020 – octubre 2020',
+    description: 'Desarrollo backend de módulos para una aplicación web de arriendo de propiedades.',
+    achievements: [],
+    skills: ['Java', 'Spring Boot', 'JHipster', 'PostgreSQL'],
+  },
+];
+
 export const developerProfile = {
   name: "José Antonio Gallegos Carvallo",
-  title: "Desarrollador de Software (Backend & Low-Code) | OCI Certified Foundations Associate ☁️",
-  bio: "Desarrollador de Software con más de 5 años de trayectoria en el sector financiero. Mi mayor fortaleza es la versatilidad técnica: poseo 5 años especializándome en plataformas Low-Code con GeneXus y 1 año de especialización en desarrollo Pro-Code con Java y Spring Boot 3.",
+  title: "AI & Backend Engineer | Agentes, LLMs e integraciones",
+  bio: "Construyo soluciones que combinan ingeniería backend e inteligencia artificial aplicada. Diseño flujos con agentes y modelos de lenguaje, integro fuentes de información mediante RAG y desarrollo herramientas para automatizar procesos con evidencia, validaciones y revisión humana. Mi trayectoria desde 2021 en sistemas empresariales aporta experiencia en APIs, SQL y modernización de software.",
   specializations: [
     {
-      title: "Arquitectura Cloud & Backend (Pro-Code)",
-      description: "Construcción de microservicios e integraciones modernas con Java y Spring Boot, con certificación oficial en Oracle Cloud Infrastructure (OCI) para entornos de alta disponibilidad."
+      title: "IA aplicada y agentes",
+      description: "Diseño de flujos con LLMs, agentes, RAG y automatización; proyectos con Python, LangGraph, FAISS, n8n y MCP."
     },
     {
-      title: "Desarrollo Ágil Empresarial (Low-Code)",
-      description: "Experto en GeneXus (5+ años) liderando el desarrollo de sistemas institucionales complejos y ERPs financieros, acelerando significativamente el Time-to-Market."
+      title: "Backend y sistemas empresariales",
+      description: "Desarrollo de APIs e integraciones con Java, Spring Boot y SQL, con experiencia en modernización de aplicaciones empresariales."
     }
   ],
   keyCompetencies: [
     {
-      title: "Cloud & IA",
-      description: "Certificado en OCI Foundations y especializado en la integración de IA Generativa (RAG y Agentes de IA) en flujos de trabajo empresariales."
+      title: "Orquestación e integración de IA",
+      description: "Conexión de agentes y modelos de lenguaje con herramientas, datos y flujos de trabajo; recuperación de información y búsqueda web en proyectos prácticos."
     },
     {
-      title: "Integración de Sistemas",
-      description: "Diseño e despliegue de APIs REST/SOAP para la interoperabilidad de sistemas críticos gubernamentales y financieros."
+      title: "Ingeniería backend y cloud",
+      description: "Diseño de APIs e integraciones, optimización de consultas SQL y formación certificada en Oracle Cloud Infrastructure."
     },
     {
-      title: "Calidad y Seguridad",
-      description: "Desarrollo basado en Clean Code y alineado a normativas internacionales ISO 9001 e ISO 27001."
+      title: "Calidad y trazabilidad",
+      description: "Validaciones automatizadas, evidencia verificable y revisión humana para propuestas técnicas y procesos de desarrollo."
     }
   ],
-  motivation: "Me motiva liderar la transformación digital aplicando la herramienta óptima para cada desafío, ya sea mediante la robustez del código tradicional o la agilidad del Low-Code.",
+  motivation: "Me motiva construir soluciones de IA útiles y verificables, respaldadas por una ingeniería de software sólida.",
   developerProfileForAI: `
 Nombre: José Antonio Gallegos Carvallo
-Título: Desarrollador de Software (Backend & Low-Code) | OCI Certified Foundations Associate
+Título: AI & Backend Engineer | Agentes, LLMs e integraciones
 
 Experiencia: 
-- 5 años en Low-Code con GeneXus (v16 a v18).
-- 1 año en Pro-Code con Java y Spring Boot 3.
+- Proyectos propios de agentes, RAG, automatización de ingeniería e integración de LLMs.
+- Ingeniero de software desde 2021 en sistemas empresariales, con Java, SQL y GeneXus.
+- Desarrollo backend con Java, Spring Boot e integración de APIs.
 
 Certificaciones Clave:
 - Oracle Cloud Infrastructure 2025 Certified Foundations Associate.
-- Especialista en IA Generativa y Agentes de IA (RAG, LLMs).
+- Oracle Cloud Infrastructure AI Foundations Associate.
+- WorkWithPlus Core Analyst.
+- Proyectos con agentes de IA, RAG y LLMs.
 
-Tech Stack: Java 17+, Spring Boot 3, OCI, GeneXus, SQL, Python, Spring AI.
+Tech Stack: Python, LangGraph, FAISS, n8n, MCP, LLMs, RAG, Java, Spring Boot, OCI, SQL y GeneXus.
 Inglés: C2 Proficient.
 `
 };
 
 export const certifications = [
+  {
+    category: "IA y agentes · Certificaciones y formación",
+    items: [
+      { title: 'Oracle Cloud Infrastructure AI Foundations Associate', issuer: 'Oracle', date: 'Ago 2026' },
+      { title: 'Inmersión de Inteligencia Artificial en la Práctica', issuer: 'Daxus Latam', date: 'Oct 2026' },
+      { title: 'Curso de desarrollo con IA - El nuevo programador', issuer: 'BIG school', date: 'Oct 2026' },
+      { title: 'Inmersión Agentes de IA en la Práctica', issuer: 'Daxus Latam', date: 'Ago 2026' },
+      { title: 'Formación OCI AI Foundations Associate - ONE', issuer: 'Alura Latam', date: 'Ago 2026' },
+      { title: 'Inmersión DEV Agentes de AI (RAG, LLM)', issuer: 'Alura Latam', date: 'Mar 2026' },
+      { title: 'Spring AI: Integra una aplicación con OpenAI', issuer: 'Alura Latam', date: 'Feb 2026' },
+      { title: 'Machine Learning with Python Essential', issuer: 'Universidad de Chile', date: 'Dic 2024' },
+    ],
+  },
   {
     category: "Cloud & Infraestructura (Oracle)",
     items: [
@@ -149,33 +211,23 @@ export const certifications = [
     ]
   },
   {
-    category: "IA Generativa & Backend",
+    category: "Backend y desarrollo",
     items: [
-      {
-        title: 'Inmersión DEV Agentes de AI (RAG, LLM)',
-        issuer: 'Alura Latam',
-        date: 'Mar 2026',
-      },
-      {
-        title: 'Spring AI: Integra una aplicación con OpenAI',
-        issuer: 'Alura Latam',
-        date: 'Feb 2026',
-      },
       {
         title: 'Diplomado en Programación en Java',
         issuer: 'Politécnico de Colombia',
         date: 'Dic 2023',
       },
-      {
-        title: 'Machine Learning with Python Essential',
-        issuer: 'Universidad de Chile',
-        date: 'Dic 2024',
-      }
     ]
   },
   {
     category: "Low-Code (GeneXus)",
     items: [
+      {
+        title: 'WorkWithPlus Core Analyst',
+        issuer: 'WorkWithPlus',
+        date: 'Certificación',
+      },
       {
         title: 'GeneXus 18 for Mobile Analyst',
         issuer: 'GeneXus',
@@ -206,6 +258,27 @@ export const certifications = [
 ];
 
 export const education = [
+  {
+    institution: 'Alura Latam & Oracle',
+    title: 'Programa ONE · Tech Builder',
+    date: 'Jun 2026 - Jul 2026',
+    description: 'Formación práctica en IA aplicada, agentes, automatización y RAG.',
+    skills: ['Agentes de IA', 'RAG', 'Automatización'],
+  },
+  {
+    institution: 'Alura Latam & Oracle',
+    title: 'Programa ONE · Tech Advanced',
+    date: 'Mar 2026 - Jul 2026',
+    description: 'Formación en infraestructura cloud, seguridad, bases de datos y servicios de IA.',
+    skills: ['OCI', 'Cloud', 'Bases de datos'],
+  },
+  {
+    institution: 'Alura Latam & Oracle',
+    title: 'Programa ONE · Tech Foundation',
+    date: 'Jul 2025 - Feb 2026',
+    description: 'Fundamentos de programación, desarrollo web y trabajo profesional.',
+    skills: ['Programación', 'JavaScript', 'Desarrollo web'],
+  },
   {
     institution: 'Alura Latam & Oracle',
     title: 'Especialización en Cloud & Backend (Programa ONE)',

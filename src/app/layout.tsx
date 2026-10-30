@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     default: 'KrakenDevCL | Desarrollador de Software',
     template: '%s | KrakenDevCL',
   },
-  description: 'Portafolio de José Antonio Gallegos Carvallo, Desarrollador de Software especializado en Backend (Java/Spring Boot) y Low-Code (GeneXus).',
-  keywords: ['Desarrollador de Software', 'Backend', 'Java', 'Spring Boot', 'GeneXus', 'Portafolio', 'Chile'],
+  description: 'Portafolio de José Antonio Gallegos Carvallo: AI & Backend Engineer, agentes de IA, LLM, RAG e integraciones.',
+  keywords: ['AI Engineer', 'Agentes de IA', 'LLM', 'RAG', 'Python', 'Backend', 'Java', 'Spring Boot', 'GeneXus', 'Chile'],
   authors: [{ name: 'José Antonio Gallegos Carvallo' }],
   creator: 'José Antonio Gallegos Carvallo',
   openGraph: {
@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     locale: 'es_CL',
     url: 'https://krakendev-portfolio.vercel.app',
     title: 'KrakenDevCL | Desarrollador de Software',
-    description: 'Conoce mis proyectos y experiencia en desarrollo de software Backend y Low-Code.',
+    description: 'Conoce mis proyectos y experiencia en backend, GeneXus e IA aplicada.',
     siteName: 'KrakenDevCL Portfolio',
     images: [
       {
-        url: '/hero-kraken.jpg',
-        width: 1200,
-        height: 630,
+        url: '/hero-kraken-ai.png',
+        width: 1699,
+        height: 926,
         alt: 'KrakenDevCL Portfolio',
       },
     ],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'KrakenDevCL | Desarrollador de Software',
     description: 'Portafolio de José Antonio Gallegos Carvallo.',
-    images: ['/hero-kraken.jpg'],
+    images: ['/hero-kraken-ai.png'],
   },
   verification: {
     google: '7c1f0bbbf5246e74',

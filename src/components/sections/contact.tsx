@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState, useEffect } from 'react';
+import { useFormStatus } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -20,6 +21,11 @@ const contactSchema = z.object({
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return <Button type="submit" disabled={pending}>{pending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}{pending ? 'Enviando...' : 'Enviar mensaje'}</Button>;
+}
 
 export function Contact() {
   const [state, formAction] = useActionState(submitContactForm, { success: false, message: '', errors: undefined });
@@ -41,8 +47,6 @@ export function Contact() {
     }
   }, [state, toast, form]);
 
-  const { formState: { isSubmitting } } = form;
-
   return (
     <section id="contact" className="container py-24 sm:py-32">
       <div className="mx-auto max-w-2xl">
@@ -52,6 +56,7 @@ export function Contact() {
             <CardDescription>
               ¿Tienes un proyecto en mente o simplemente quieres saludar? Escríbeme.
             </CardDescription>
+            <p className="pt-3 text-sm text-muted-foreground">También puedes escribir a <a className="text-primary underline underline-offset-4" href="mailto:krakendev.cl@gmail.com">krakendev.cl@gmail.com</a> o contactar por <a className="text-primary underline underline-offset-4" href="https://www.linkedin.com/in/krakendevcl/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
           </CardHeader>
           <CardContent>
             <Form {...form}>
@@ -100,10 +105,7 @@ export function Contact() {
                   )}
                 />
                 <div className="flex justify-end">
-                    <Button type="submit" disabled={isSubmitting}>
-                        {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                        Enviar Mensaje
-                    </Button>
+                    <SubmitButton />
                 </div>
               </form>
             </Form>
